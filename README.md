@@ -21,3 +21,21 @@ The script includes a range of functions that can then be used to create time se
 I acknowledge that this is not a very robust approach to doing dynamic network analysis. First, the approach only takes into account the order of events, and not their duration or the distance of events in time. Also, the choice of the frame size is always arbitrary. Finally, the size of the network will change over time, which also affects some of the measures. 
 
 I think of this as a nice experiment that is perhaps not worth exploring much further. I still believe that the time series that are created with these functions give you good clues about interesting episodes in the underlying social process (the process associated with the network dynamics), and if you have qualitative data on the underlying events, creating the time series can be a good step in the interpretive process. 
+
+## AncDes.R
+This script has a number of functions that can be used for finding ancestors and descendants of nodes in a directed, a-cyclic network. All functions assume that the network is represented by an edge list where the nodes are all represented by numeric values.
+
+### GetAncestors()
+This function returns all the ancestors of a given node in a directed a-cyclic network. The arguments to the function are an edge list of the network, and the node of which the ancestors should be found.
+
+### GetDescendants()
+This function returns all the descendants of a given node in a directed a-cyclic network. The arguments to the function are an edge list of the network, and the node of which the descendants should be found.
+
+### CommonAncestors()
+This function finds the common ancestors of nodes in a directed a-cyclic graph. The results are written to a file called "CommonAncestors.csv". The graph should be represented by an edge list, submitted by the user. The nodes should be a vector or matrix of pairs of nodes for which the common ancestors should be identified. If a vector is submitted (2 nodes), the function will return the common ancestors of those two nodes. If a matrix is submitted, then the function will return the common ancestors for each pair of node separately.
+
+### CommonDescendants()
+This function finds the common descendants of nodes in a directed a-cyclic graph. he results are written to a file called "CommonDescendants.csv". The graph should be represented by an edge list, submitted by the user. The nodes should be a vector or matrix of pairs of nodes for which the common descendants should be identified. If a vector is submitted (2 nodes), the function will return the common descendants of those two nodes.  If a matrix is submitted, then the function will return the common descendants for each pair of node separately.
+
+
+
